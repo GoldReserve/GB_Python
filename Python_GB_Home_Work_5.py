@@ -70,3 +70,5 @@ def column_sum(lst):
 print(column_sum(summa_lst))
 
 
+
+
