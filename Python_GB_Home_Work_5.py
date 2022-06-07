@@ -68,3 +68,5 @@ def column_sum(lst):
     return new_lst1
 
 print(column_sum(summa_lst))
+
+

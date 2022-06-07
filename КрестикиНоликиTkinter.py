@@ -2,6 +2,7 @@ from tkinter import *
 import random
 
 
+
 class Square:
     """ задает квадраты(клетки) """
 
