@@ -2,7 +2,7 @@
  Выполните ее в виде функции. """
 
 # def delete(a:str):
-#     return a.replace('абв', '')
+#     return a.lower().replace('абв', '')
 
 # """2. """
 # В отдельном файле
@@ -26,48 +26,48 @@
 #     text = text.replace('  ', ' ')
 #
 # print(textwrap.fill(text, width=60))
-from unicodedata import decimal
+# from unicodedata import decimal
 
-"""4. """
-import functools
-import random
+# """4. """
+# import functools
+# import random
 
-# Создайте 2 списка
-lang = ['JavaScript', 'Swift', 'Python', 'Kotlin', 'Pascal']
-lang_num = [1, 2, 3, 4, 5]
+# # Создайте 2 списка
+# lang = ['JavaScript', 'Swift', 'Python', 'Kotlin', 'Pascal']
+# lang_num = [1, 2, 3, 4, 5]
 
-# Функция возвращающая кортеж
-def lst(a, b):
-    return [(i, j) for i, j in zip(a, b)]
+# # Функция возвращающая кортеж
+# def lst(a, b):
+#     return [(i, j) for i, j in zip(a, b)]
 
-# Используя функцию lst создаем наш список с кортежами
-lang_num_lst = (lst(lang, lang_num))
+# # Используя функцию lst создаем наш список с кортежами
+# lang_num_lst = (lst(lang, lang_num))
 
-# Создаем список из списков для подсчета суммы номеров букв
-summa_lst = [[] for _ in range(len(lang))]
+# # Создаем список из списков для подсчета суммы номеров букв
+# summa_lst = [[] for _ in range(len(lang))]
 
-# Заполняем созданный список номерами
-number_of_list = 0
-for language in lang:
-    for digit in language:
-        summa_lst[number_of_list].append(int(hex(ord(f'{digit}')).removeprefix('0x'), 16))
-    number_of_list += 1
+# # Заполняем созданный список номерами
+# number_of_list = 0
+# for language in lang:
+#     for digit in language:
+#         summa_lst[number_of_list].append(int(hex(ord(f'{digit}')).removeprefix('0x'), 16))
+#     number_of_list += 1
 
-# Теперь мы пишем функцию которая будет брать из summ_list значения и проверять есть ли там делитель
-def column_sum(lst):
-    # Суммируем числа во всех вложенных списках чтобы проверить делитель
-    new_lst, new_lst1 = [sum(v) for v in zip(*lst)], []
-    numb2 = 0
-    for z in new_lst:
-        if z % lang_num_lst[numb2][1] == 0:
-            new_lst1.append(lang_num_lst[numb2])
-            numb2 += 1
-        else:
-            numb2 += 1
-            continue
-    return new_lst1
+# # Теперь мы пишем функцию которая будет брать из summ_list значения и проверять есть ли там делитель
+# def column_sum(lst):
+#     # Суммируем числа во всех вложенных списках чтобы проверить делитель
+#     new_lst, new_lst1 = [sum(v) for v in zip(*lst)], []
+#     numb2 = 0
+#     for z in new_lst:
+#         if z % lang_num_lst[numb2][1] == 0:
+#             new_lst1.append(lang_num_lst[numb2])
+#             numb2 += 1
+#         else:
+#             numb2 += 1
+#             continue
+#     return new_lst1
 
-print(column_sum(summa_lst))
+# print(column_sum(summa_lst))
 
 
 
